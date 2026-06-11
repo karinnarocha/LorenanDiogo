@@ -1,0 +1,171 @@
+.container {
+  width: 100%;
+  padding: 95px clamp(24px, 8vw, 160px) 110px;
+  background: #fbf8f2;
+  color: #2b1710;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.eyebrow {
+  margin: 0 0 22px;
+  color: #d7ad23;
+  font-size: 13px;
+  letter-spacing: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  color: #2b1710;
+  font-family: var(--font-serif, Georgia, "Times New Roman", serif);
+  font-size: clamp(44px, 5vw, 72px);
+  line-height: 1;
+  font-weight: 500;
+}
+
+.cardsWrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 34px;
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.card {
+  min-height: 470px;
+  padding: 58px 54px 48px;
+  border: 1px solid rgba(43, 23, 16, 0.16);
+  background: rgba(255, 255, 255, 0.35);
+  display: flex;
+  flex-direction: column;
+}
+
+.quoteMark {
+  display: block;
+  margin-bottom: 50px;
+  color: #d7ad23;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.cardText {
+  margin: 0;
+  color: #4f4039;
+  font-family: var(--font-serif, Georgia, "Times New Roman", serif);
+  font-size: clamp(21px, 1.5vw, 27px);
+  line-height: 1.45;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  margin: auto 0 34px;
+  background: rgba(43, 23, 16, 0.16);
+}
+
+.cardFooter {
+  margin-top: 0;
+}
+
+.cardTitle {
+  margin: 0 0 10px;
+  color: #2b1710;
+  font-family: var(--font-serif, Georgia, "Times New Roman", serif);
+  font-size: 21px;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+.location {
+  margin: 0;
+  color: #8a6f63;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 5px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Responsive */
+
+@media (max-width: 1100px) {
+  .container {
+    padding: 85px 28px 95px;
+  }
+
+  .cardsWrapper {
+    gap: 24px;
+  }
+
+  .card {
+    padding: 48px 36px 42px;
+  }
+}
+
+@media (max-width: 900px) {
+  .cardsWrapper {
+    grid-template-columns: 1fr;
+    max-width: 620px;
+  }
+
+  .card {
+    min-height: auto;
+  }
+
+  .quoteMark {
+    margin-bottom: 36px;
+  }
+
+  .cardText {
+    margin-bottom: 60px;
+  }
+
+  .divider {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .container {
+    padding: 70px 20px 80px;
+  }
+
+  .header {
+    margin-bottom: 48px;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 5px;
+  }
+
+  .title {
+    font-size: 42px;
+  }
+
+  .card {
+    padding: 40px 28px 36px;
+  }
+
+  .quoteMark {
+    margin-bottom: 32px;
+  }
+
+  .cardText {
+    font-size: 21px;
+    line-height: 1.5;
+  }
+
+  .location {
+    letter-spacing: 4px;
+  }
+}

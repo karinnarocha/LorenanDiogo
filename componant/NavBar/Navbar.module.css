@@ -1,0 +1,174 @@
+.NavbarContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  
+    width: 100%;
+    height: 96px;
+    padding: 0 clamp(28px, 6vw, 110px);
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    color: white;
+    background-color: transparent;
+  
+    transition:
+      height 0.35s ease,
+      background-color 0.35s ease,
+      box-shadow 0.35s ease,
+      backdrop-filter 0.35s ease;
+  }
+  
+  .scrolled {
+    height: 88px;
+    background-color: rgba(61, 45, 38, 0.96);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(10px);
+  }
+  
+  .Logo {
+    color: inherit;
+    text-decoration: none;
+    font-family: "Giaza", Georgia, serif;
+    font-size: 25px;
+    line-height: 1;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+  
+  .MenuLinks {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(28px, 3vw, 52px);
+  
+    font-family: "Lato", sans-serif;
+    text-transform: uppercase;
+  }
+  
+  .MenuLinks a {
+    color: inherit;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1;
+    letter-spacing: 0.8px;
+    font-weight: 500;
+    opacity: 0.88;
+    transition: opacity 0.25s ease, color 0.25s ease;
+  }
+  
+  .MenuLinks a:hover {
+    opacity: 1;
+    color: #dfb92f;
+  }
+  
+  .RightSide {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  
+  .NavButton {
+    min-width: 178px;
+    height: 48px;
+    padding: 0 30px;
+  
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    border-radius: 999px;
+    border: none;
+    background-color: #dfb92f;
+    color: #1f130e;
+  
+    font-family: "Lato", sans-serif;
+    font-size: 13px;
+    line-height: 1;
+    letter-spacing: 2px;
+    font-weight: 800;
+    text-decoration: none;
+    text-transform: uppercase;
+  
+    transition:
+      transform 0.25s ease,
+      background-color 0.25s ease;
+  }
+  
+  .NavButton:hover {
+    transform: translateY(-2px);
+    background-color: #ecc840;
+  }
+  
+  .Language {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  
+    color: white;
+    font-size: 15px;
+    line-height: 1;
+  }
+  
+  .Chevron {
+    font-size: 14px;
+    opacity: 0.8;
+    transform: translateY(-2px);
+  }
+
+
+  @media (max-width: 950px) {
+    .NavbarContainer {
+      height: 82px;
+      padding: 0 24px;
+    }
+  
+    .scrolled {
+      height: 78px;
+    }
+  
+    .MenuLinks {
+      display: none;
+    }
+  
+    .NavButton {
+      min-width: 150px;
+      height: 44px;
+      padding: 0 24px;
+      font-size: 12px;
+      letter-spacing: 1.6px;
+    }
+  
+    .Language {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 520px) {
+    .NavbarContainer {
+      height: 76px;
+      padding: 0 20px;
+    }
+  
+    .scrolled {
+      height: 72px;
+    }
+  
+    .Logo {
+      font-size: 22px;
+    }
+  
+    .NavButton {
+      min-width: auto;
+      height: 42px;
+      padding: 0 20px;
+      font-size: 11px;
+    }
+  }

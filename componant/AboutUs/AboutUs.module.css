@@ -1,0 +1,34 @@
+.AboutUS{
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(43, 27, 18);
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.AboutUsPhotoSection {
+  width: 70vw;
+  overflow: hidden; 
+}
+
+.AboutUsPhotoSection img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.textSection{
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: 5%;
+  gap: 2vh;
+}
+.subTitle{
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: rgb(184, 139, 26);
+
+}

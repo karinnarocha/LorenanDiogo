@@ -1,0 +1,83 @@
+.processSection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 720px;
+    background: #f8f5ef;
+  }
+  
+  .processImage {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .processImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .processContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 90px clamp(40px, 7vw, 120px);
+    background: #fbf8f2;
+  }
+  
+  .processEyebrow {
+    margin: 0 0 28px;
+    color: #d5a915;
+    font-size: 13px;
+    letter-spacing: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  
+  .processTitle {
+    margin: 0 0 58px;
+    color: #2b1710;
+    font-family: var(--font-serif, Georgia, "Times New Roman", serif);
+    font-size: clamp(42px, 4.5vw, 66px);
+    line-height: 1;
+    font-weight: 500;
+  }
+  
+  .processList {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+  
+  .processItem {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+  
+  .processNumber {
+    color: #eadbb7;
+    font-family: var(--font-serif, Georgia, "Times New Roman", serif);
+    font-size: 32px;
+    line-height: 1;
+    font-weight: 400;
+  }
+  
+  .processItem h3 {
+    margin: 0 0 12px;
+    color: #2b1710;
+    font-family: var(--font-serif, Georgia, "Times New Roman", serif);
+    font-size: 22px;
+    line-height: 1.25;
+    font-weight: 500;
+  }
+  
+  .processItem p {
+    margin: 0;
+    color: #81665a;
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 520px;
+  }

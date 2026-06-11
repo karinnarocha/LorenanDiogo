@@ -1,0 +1,153 @@
+.Page {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+  
+    width: 100vw;
+    height: 100vh;
+  
+    background-image: url("/images/1.webp");
+    background-size: cover;
+    background-position: center;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    overflow: hidden;
+  
+    animation: pageFadeOut 1s ease forwards;
+    animation-delay: 10s;
+  }
+  
+  .Page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+  
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  
+  }
+  
+  .CenterContent {
+    position: relative;
+    z-index: 10;
+  
+    width: min(90vw, 1100px);
+    height: 260px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    text-align: center;
+    color: white;
+  }
+  
+  .TextGro {
+    position: absolute;
+    inset: 0;
+    gap:25px;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    animation: titleSequence 4s ease forwards;
+  }
+  
+  .TextGro h4 {
+    font-family: "Lato", sans-serif;
+    font-size: clamp(22px, 2vw, 40px);
+    font-weight: 100;
+    letter-spacing: 0.06em;
+  }
+  
+  .TextGro h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(56px, 7vw, 120px);
+    font-weight: 600;
+    line-height: 0.9;
+  }
+  
+  .Description {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+
+
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    max-width: 99vh;
+    margin: auto;
+  
+    font-family: "Lato", sans-serif;
+    font-size: clamp(18px, 1.5vw, 28px);
+    font-weight: 300;
+    line-height: 1.45;
+    letter-spacing: 0.3em;
+    text-align: center;
+  
+    opacity: 0;
+  
+    animation: descriptionSequence 6s ease forwards;
+    animation-delay: 3.8s;
+  }
+  
+  @keyframes titleSequence {
+    0% {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+  
+    25% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  
+    70% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  
+    100% {
+      opacity: 0; 
+      transform: translateY(-16px);
+    }
+  }
+  
+  @keyframes descriptionSequence {
+    0% {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+  
+    30% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  
+    75% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  
+    100% {
+      opacity: 0;
+      transform: translateY(-16px);
+    }
+  }
+  
+  @keyframes pageFadeOut {
+    to {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+  }

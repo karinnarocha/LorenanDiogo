@@ -1,0 +1,82 @@
+.container {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #000; /* faixa preta por trás da foto */
+}
+
+/* ESQUERDA: FUNDO PRETO + FOTO */
+.leftSide {
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 0 4rem 4rem;
+
+}
+
+.photo {
+  z-index: 3;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  left: 20%;
+  background-image: url("/images/16.webp"); /* troca pelo nome da sua imagem */
+  background-size: cover;
+  background-position: center;
+}
+
+/* DIREITA: BLOCO BRANCO + TEXTO + CONTACT */
+.rightSide {
+  position: relative;
+  background-color: #fdfbf8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 4rem 6rem 4rem;
+}
+
+/* BLOCO CENTRAL COM TEXTO */
+.info {
+  text-align: left;
+  font-family: "Cormorant", sans-serif;
+  color: #333;
+}
+
+.name {
+  font-family: "Giaza", serif;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.line {
+  margin: 0.2rem 0;
+  font-size: 1rem;
+}
+
+.social {
+  margin-top: 1.3rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+.instagramIcon {
+  font-size: 1.1rem;
+}
+
+/* “CONTACT” GIGANTE EMBAIXO À DIREITA */
+.contactTitle {
+    position: absolute;
+    bottom: 4rem;
+    transform: translateY(40%);
+    font-family: "Cormorant", serif;
+    font-size: clamp(2.5rem, 9vw, 18rem);
+    letter-spacing: 0.16em;
+    margin: 0;
+    color: #000000;
+    z-index: 3;
+}
