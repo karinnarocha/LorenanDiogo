@@ -1,0 +1,145 @@
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 6rem clamp(1.5rem, 6vw, 8rem);
+  background-color: #2b2118;
+  overflow: hidden;
+}
+
+/* LEFT SIDE now just holds the background photo */
+.leftSide {
+  position: absolute;
+  inset: 0;
+  padding: 0;
+  background-color: transparent;
+  z-index: 0;
+}
+
+.photo {
+  position: absolute;
+  inset: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-image: url("/images/16.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+/* dark brown wash over the photo */
+.leftSide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg,
+      rgba(43, 33, 24, 0.97) 4%,
+      rgba(43, 33, 24, 0.039) 100%);
+  z-index: 1;
+}
+
+/* RIGHT SIDE: holds the text, sits above the photo */
+.rightSide {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 760px;
+  padding: 0;
+  background-color: transparent;
+}
+
+.info {
+  text-align: left;
+  font-family: "Cormorant", sans-serif;
+  color: #f7f3ec;
+}
+
+/* "GET IN TOUCH" — first .line */
+.info>.line:first-of-type {
+  margin: 0 0 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  color: #c2a23f;
+  text-transform: uppercase;
+}
+
+.name {
+  width: 75%;
+  margin: 0 0 2.5rem;
+  font-family: "Giaza", serif;
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1.08;
+  color: #f7f3ec;
+}
+
+/* SEND AN EMAIL — the gold pill button */
+.text {
+  color: #f7f3ec;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.info>a.text:first-of-type {
+  display: inline-block;
+  padding: 1.1rem 2.6rem;
+  margin-bottom: 3rem;
+  border-radius: 999px;
+  background-color: #cba94a;
+  color: #2b2118;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.14em;
+}
+
+.info>a.text:first-of-type:hover {
+  background-color: #d9bd62;
+  color: #2b2118;
+}
+
+/* contact info lines */
+.line {
+  margin: 1.3rem 0 0;
+  font-size: 1.35rem;
+  font-weight: 400;
+}
+
+.social {
+  margin-top: 1.3rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.35rem;
+}
+
+.social a.text:hover {
+  color: #cba94a;
+}
+
+.instagramIcon {
+  font-size: 1.3rem;
+  color: #cba94a;
+}
+
+/* hide the giant CONTACT title (not in the image) */
+.contactTitle {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 4rem 1.5rem;
+  }
+
+  .line,
+  .social {
+    font-size: 1.1rem;
+  }
+}

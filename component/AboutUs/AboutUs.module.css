@@ -1,0 +1,87 @@
+.AboutUS {
+  width: 100%;
+  background-color: rgb(43, 27, 18);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 80h;
+}
+
+.AboutUsPhotoSection {
+  flex: 1 1 55%;
+  align-self: stretch;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.AboutUsPhotoSection img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.textSection {
+  flex: 1 1 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.25rem;
+  padding: 5%;
+  color: white;
+}
+
+.subTitle {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  font-size: clamp(0.8rem, 1vw, 1rem);
+  color: rgb(184, 139, 26);
+}
+
+.title {
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+  font-size: clamp(1.5rem, 2.8vw, 2.5rem);
+  line-height: 1.2;
+  color: white;
+  margin: 0;
+}
+
+.description {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: clamp(0.9rem, 1.1vw, 1.1rem);
+  line-height: 1.7;
+  color: rgba(207, 202, 202, 0.85);
+  white-space: pre-line;
+}
+
+.location {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-size: clamp(0.65rem, 0.75vw, 0.75rem);
+  color: rgb(184, 139, 26);
+  margin-top: 0.5rem;
+}
+
+/* ---- Mobile: only handles layout direction, nothing else ---- */
+@media (max-width: 768px) {
+  .AboutUS {
+    flex-direction: column;
+  }
+
+  .AboutUsPhotoSection,
+  .textSection {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+
+  .AboutUsPhotoSection {
+    height: 45vh;
+    /* fixed image height only makes sense once stacked */
+  }
+}
