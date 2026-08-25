@@ -85,6 +85,7 @@
   color: #f7f3ec;
   text-decoration: none;
   transition: color 0.2s ease;
+  font-family: "PlayfairDisplayLocal";
 }
 
 .info>a.text:first-of-type {
@@ -109,6 +110,7 @@
   margin: 1.3rem 0 0;
   font-size: 1.35rem;
   font-weight: 400;
+  font-family: "PlayfairDisplayLocal";
 }
 
 .social {

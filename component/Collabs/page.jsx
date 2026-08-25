@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./Collabs.module.css";
 
 const firstRowImages = [
@@ -40,13 +41,26 @@ const secondRowImages = [
 
 export default function Collabs() {
   return (
-    <section className={styles.container}>
+    <section className={styles.container} >
+
       {/* HERO SECTION */}
       <section className={styles.hero}>
+        <Image
+          src="/images/8.webp"
+          alt="Travel content creation"
+          fill
+          priority
+          sizes="100vw"
+          className={styles.heroImage}
+        />
+
         <div className={styles.heroOverlay} />
 
         <div className={styles.heroContent}>
-          <p className={styles.heroEyebrow}>LORENA &amp; DIOGO</p>
+          <p className={styles.heroEyebrow}>
+            LORENA &amp; DIOGO
+          </p>
+
           <h1 className={styles.heroTitle}>
             Creating moments
             <br />
@@ -55,31 +69,72 @@ export default function Collabs() {
         </div>
       </section>
 
+
       {/* GALLERY SECTION */}
-      <section className={styles.gallerySection} id="Portfolio">
+      <section className={styles.gallerySection} id="collabs">
+
         <div className={styles.galleryHeader}>
-          <p className={styles.galleryEyebrow}>PREVIOUS COLLABORATIONS</p>
-          <h2 className={styles.galleryTitle}>Where We've Created</h2>
+          <p className={styles.galleryEyebrow}>
+            PREVIOUS COLLABORATIONS
+          </p>
+
+          <h2 className={styles.galleryTitle}>
+            Where We've Created
+          </h2>
         </div>
+
 
         <div className={styles.gallery}>
+
+          {/* FIRST ROW */}
           <div className={`${styles.track} ${styles.trackRight}`}>
-            {[...firstRowImages, ...firstRowImages].map((image, index) => (
-              <div className={styles.galleryImage} key={`first-${index}`}>
-                <img src={image} alt="Previous collaboration" />
-              </div>
-            ))}
+
+            {[...firstRowImages, ...firstRowImages].map(
+              (image, index) => (
+                <div
+                  className={styles.galleryImage}
+                  key={`first-${index}`}
+                >
+                  <Image
+                    src={image}
+                    alt="Previous collaboration"
+                    fill
+                    sizes="(max-width: 480px) 220px, (max-width: 768px) 260px, 22vw"
+                    className={styles.galleryImageImg}
+                  />
+                </div>
+              )
+            )}
+
           </div>
 
+
+          {/* SECOND ROW */}
           <div className={`${styles.track} ${styles.trackLeft}`}>
-            {[...secondRowImages, ...secondRowImages].map((image, index) => (
-              <div className={styles.galleryImage} key={`second-${index}`}>
-                <img src={image} alt="Previous collaboration" />
-              </div>
-            ))}
+
+            {[...secondRowImages, ...secondRowImages].map(
+              (image, index) => (
+                <div
+                  className={styles.galleryImage}
+                  key={`second-${index}`}
+                >
+                  <Image
+                    src={image}
+                    alt="Previous collaboration"
+                    fill
+                    sizes="(max-width: 480px) 220px, (max-width: 768px) 260px, 22vw"
+                    className={styles.galleryImageImg}
+                  />
+                </div>
+              )
+            )}
+
           </div>
+
         </div>
+
       </section>
+
     </section>
   );
 }

@@ -4,98 +4,162 @@
   background: #f8f5ef;
 }
 
-/* HERO */
+
+/* =========================
+   HERO
+========================= */
 
 .hero {
   position: relative;
   min-height: 620px;
   width: 100%;
-  background-image: url("/images/8.webp");
-  background-size: cover;
-  background-position: center;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  overflow: hidden;
+}
+
+.heroImage {
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
 }
 
 .heroOverlay {
   position: absolute;
   inset: 0;
+
   background: rgba(34, 20, 10, 0.45);
+
   z-index: 1;
 }
 
 .heroContent {
   position: relative;
   z-index: 2;
+
   text-align: center;
+
   padding: 0 24px;
 }
 
 .heroEyebrow {
   margin: 0 0 28px;
+
   font-size: 13px;
   letter-spacing: 8px;
+
   color: #d7ad23;
+
   font-weight: 500;
   text-transform: uppercase;
 }
 
 .heroTitle {
   margin: 0;
+
   color: #fff;
-  font-family: var(--font-serif, Georgia, "Times New Roman", serif);
+
+  font-family: var(--font-serif,
+      Georgia,
+      "Times New Roman",
+      serif);
+
   font-size: clamp(46px, 7vw, 96px);
   line-height: 1.05;
+
   font-weight: 500;
 }
 
-/* GALLERY SECTION */
+
+/* =========================
+   GALLERY SECTION
+========================= */
 
 .gallerySection {
   padding: 90px 0 0;
+
   background: #f8f5ef;
+
+  overflow: hidden;
 }
 
 .galleryHeader {
   text-align: center;
+
   margin-bottom: 90px;
+
   padding: 0 24px;
 }
 
 .galleryEyebrow {
   margin: 0 0 24px;
+
   color: #d7ad23;
+
   font-size: 13px;
   letter-spacing: 8px;
+
   font-weight: 500;
+
   text-transform: uppercase;
 }
 
 .galleryTitle {
   margin: 0;
+
   color: #2b1710;
-  font-family: var(--font-serif, Georgia, "Times New Roman", serif);
+
+  font-family: var(--font-serif,
+      Georgia,
+      "Times New Roman",
+      serif);
+
   font-size: clamp(38px, 5vw, 66px);
+
   line-height: 1;
+
   font-weight: 500;
 }
+
+
+/* =========================
+   GALLERY TRACK
+========================= */
 
 .gallery {
   display: flex;
   flex-direction: column;
+
   gap: 14px;
+
+  width: 100%;
+
   overflow: hidden;
 }
 
 .track {
   display: flex;
+
   gap: 14px;
+
   width: max-content;
+
+  flex-shrink: 0;
+
   will-change: transform;
+
   animation-duration: 28s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+
+  /*
+    Keep paused until the user hovers.
+    This keeps the gallery from constantly
+    consuming animation resources.
+  */
   animation-play-state: paused;
 }
 
@@ -103,8 +167,14 @@
   animation-play-state: running;
 }
 
+
+/* =========================
+   DIRECTIONS
+========================= */
+
 .trackRight {
   transform: translateX(-50%);
+
   animation-name: slideRight;
 }
 
@@ -112,22 +182,41 @@
   animation-name: slideLeft;
 }
 
+
+/* =========================
+   GALLERY IMAGE
+========================= */
+
 .galleryImage {
+  position: relative;
+
   flex: 0 0 auto;
+
   width: clamp(220px, 22vw, 390px);
   height: clamp(280px, 28vw, 470px);
+
   overflow: hidden;
+
   background: #ddd;
 }
 
-.galleryImage img {
-  width: 100%;
-  height: 100%;
+.galleryImageImg {
   object-fit: cover;
-  display: block;
+
+  transition: transform 0.4s ease;
 }
 
-/* ANIMATIONS */
+
+/* Optional subtle hover effect */
+
+.galleryImage:hover .galleryImageImg {
+  transform: scale(1.03);
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
 
 @keyframes slideLeft {
   from {
@@ -149,9 +238,13 @@
   }
 }
 
-/* RESPONSIVE */
+
+/* =========================
+   TABLET
+========================= */
 
 @media (max-width: 768px) {
+
   .hero {
     min-height: 520px;
   }
@@ -180,7 +273,13 @@
   }
 }
 
+
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width: 480px) {
+
   .hero {
     min-height: 460px;
   }
@@ -196,5 +295,30 @@
   .galleryImage {
     width: 220px;
     height: 300px;
+  }
+
+  .gallery {
+    gap: 10px;
+  }
+
+  .track {
+    gap: 10px;
+  }
+}
+
+
+/* =========================
+   REDUCE MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .track {
+    animation: none;
+    transform: none;
+  }
+
+  .galleryImageImg {
+    transition: none;
   }
 }

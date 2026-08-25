@@ -2,7 +2,7 @@ import styles from "./Contact.module.css";
 
 export default function Contact() {
   return (
-    <section className={styles.container} id="Contact">
+    <section className={styles.container} id="WorkWithUs">
       {/* BLOCO ESQUERDO: PRETO + IMAGEM */}
       <div className={styles.leftSide}>
         <div className={`${styles.photo} animate__animated animate__slideInLeft`} />

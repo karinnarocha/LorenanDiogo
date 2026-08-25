@@ -1,15 +1,25 @@
 .processSection {
+  position: relative;
+  z-index: 1;
+
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  max-height: 70vh;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+  min-height: clamp(600px, 85vh, 900px);
+  height: 70vh;
+
   background: #f8f5ef;
-  padding: 5px 0 5px 0;
-  /* align-items: start REMOVED — both columns stretch to match each other again */
+  padding: 0;
+
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .processImage {
   width: 100%;
+  min-width: 0;
   height: 100%;
+  min-height: 600px;
   overflow: hidden;
 }
 
@@ -17,15 +27,21 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
 }
 
 .processContent {
+  min-width: 0;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 90px clamp(40px, 7vw, 120px);
+
+  padding: clamp(60px, 7vw, 100px) clamp(40px, 7vw, 120px);
+
   background: #fbf8f2;
+  box-sizing: border-box;
 }
 
 .processEyebrow {
@@ -54,7 +70,7 @@
 
 .processItem {
   display: grid;
-  grid-template-columns: 64px 1fr;
+  grid-template-columns: 64px minmax(0, 1fr);
   gap: 24px;
   align-items: start;
 }
@@ -84,30 +100,69 @@
   max-width: 520px;
 }
 
-@media (max-width: 768px) {
+
+/* TABLET */
+@media (max-width: 900px) {
   .processSection {
     grid-template-columns: 1fr;
-    min-height: auto;
-  }
-
-  .processImage {
-    height: 45vh;
-    order: 2;
-    /* now shows second on mobile */
+    min-height: 0;
+    height: auto;
   }
 
   .processContent {
-    padding: 56px 6%;
     order: 1;
-    /* now shows first on mobile */
+    padding: 70px 40px;
+  }
+
+  .processImage {
+    order: 2;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+  }
+}
+
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .processContent {
+    padding: 60px 22px;
+  }
+
+  .processImage {
+    aspect-ratio: 4 / 3;
+  }
+
+  .processEyebrow {
+    margin-bottom: 20px;
+    letter-spacing: 5px;
   }
 
   .processTitle {
     margin-bottom: 40px;
+    font-size: clamp(38px, 10vw, 50px);
+  }
+
+  .processList {
+    gap: 34px;
   }
 
   .processItem {
-    grid-template-columns: 48px 1fr;
-    gap: 16px;
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .processNumber {
+    font-size: 27px;
+  }
+
+  .processItem h3 {
+    font-size: 20px;
+  }
+
+  .processItem p {
+    font-size: 15px;
+    line-height: 1.6;
   }
 }
