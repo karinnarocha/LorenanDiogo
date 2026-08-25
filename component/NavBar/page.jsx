@@ -19,9 +19,8 @@ export default function NavBar() {
 
   return (
     <header
-      className={`${styles.NavbarContainer} ${
-        isScrolled ? styles.scrolled : ""
-      }`}
+      className={`${styles.NavbarContainer} ${isScrolled ? styles.scrolled : ""
+        }`}
     >
       <a href="#" className={styles.Logo}>
         L&amp;D
@@ -30,13 +29,13 @@ export default function NavBar() {
       <nav className={styles.MenuLinks}>
         <a href="#About">About Us</a>
         <a href="#Services">Services</a>
-        <a href="#Portfolio">Portfolio</a>
+        <a href="#collabs">Portfolio</a>
         <a href="#Testimonials">Testimonials</a>
-        <a href="#Contact">Contact</a>
+        <a href="#WorkWithUs">Contact</a>
       </nav>
 
       <div className={styles.RightSide}>
-        <a href="#Contact" className={styles.NavButton}>
+        <a href="mailto:hello@lorenandiogo.com" className={styles.NavButton}>
           WORK WITH US
         </a>
       </div>
