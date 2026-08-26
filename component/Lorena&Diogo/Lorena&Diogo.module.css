@@ -31,6 +31,27 @@
 
 }
 
+.Page::before {
+  content: "";
+  position: absolute;
+  inset: -20px;
+
+  background-image: url("/images/1.webp");
+  background-size: cover;
+  background-position: center;
+
+  filter: blur(8px);
+  transform: scale(1.05);
+}
+
+.Page::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.65);
+}
+
 .CenterContent {
   position: relative;
   z-index: 10;
